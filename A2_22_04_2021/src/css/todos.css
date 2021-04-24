@@ -1,0 +1,11 @@
+.main-wrapper{
+    background-color:red;
+    height: 100vh;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
