@@ -7,10 +7,10 @@ export const FetchHook = (endpoint) => {
     loading: true,
   };
 
-  const [data, dispatch] = useReducer(apiReducer, initialState);
+  const [data, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    dispatch({ type: "FETCH_START" });
+    dispatch({ type: "FETCH_START" });                                //dispatching the action for start
 
     fetch(endpoint)
       .then((res) => {
@@ -18,17 +18,17 @@ export const FetchHook = (endpoint) => {
         return res.json();
       })
       .then((json) => {
-        dispatch({ type: "FETCH_SUCCESS", payload: json });
+        dispatch({ type: "FETCH_SUCCESS", payload: json });           //will only dispatch this if the data is fetched
       })
       .catch((error) => {
-        dispatch({ type: "FETCH_FAILURE", payload: error.message });
+        dispatch({ type: "FETCH_FAILURE", payload: error.message });  // wil dispatch if there is error
       });
   },[]);
 
   return data;
 };
 
-function apiReducer(state, action) {
+function reducer(state, action) {                                     //here the data will be set according to action dispatched
   switch (action.type) {
     case "FETCH_START":
       return { ...state, loading: true };

@@ -43,7 +43,7 @@
 .sli.active {
   opacity: 1;
   transition-duration: 1s;
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .play-pause {

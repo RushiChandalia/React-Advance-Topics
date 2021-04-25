@@ -3,10 +3,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Todos from "./components/todos";
 
 function App() {
-  const data = FetchHook("https://jsonplaceholder.typicode.com/todos");
+  const data = FetchHook("https://jsonplaceholder.typicode.com/todos");     //data returned from hook
   return (
     <div className="App">
-      <Todos data={data} />
+      <Todos data={data} />                                                 
     </div>
   );
 }

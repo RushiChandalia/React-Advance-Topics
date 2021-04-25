@@ -56,7 +56,7 @@ const ImageSlider = ({ slides }) => {
           {isPlaying ? <FaPauseCircle className="buttons" onClick={togglePlay}/>    :  <FaPlay className="buttons" onClick={togglePlay} />}  
           </div>
         <div>
-          {isPlaying ?  <p>playing</p> : <p>paused</p> }
+          {isPlaying ?  <p>Playing...</p> : <p>Paused.</p> }
                
           </div>
     </section>
