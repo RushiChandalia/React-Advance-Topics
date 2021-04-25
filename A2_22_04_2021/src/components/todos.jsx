@@ -23,7 +23,7 @@ const Todos = ({ data }) => {
          <>
          {" "}
         
-         <h2 >Error...</h2>
+         <h2 style={{color:"white"}} >{data.error}</h2>
        </>
       } 
     
