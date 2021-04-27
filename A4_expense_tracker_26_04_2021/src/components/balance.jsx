@@ -11,19 +11,19 @@ const Balance = () => {
 
       <div className="container">
         <h4>Your Balance</h4>
-        <h1 id="balance">{balance}</h1>
+        <h1 id="balance">{`${balance}$`}</h1>
 
         <div className="inc-exp-container">
           <div>
             <h4>Income</h4>
             <p id="money-plus" className="money plus">
-              {value.income}
+              {`${value.income}$`}
             </p>
           </div>
           <div>
             <h4>Expense</h4>
             <p id="money-minus" className="money minus">
-              {value.expense}
+              {`${value.expense}$`}
             </p>
           </div>
         </div>
