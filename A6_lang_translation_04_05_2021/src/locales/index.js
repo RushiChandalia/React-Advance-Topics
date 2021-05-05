@@ -1,7 +1,6 @@
 
 import en from './en.json';
 import fr from './fr.json';
-import nl from './nl.json';
 
 export const languages = {
   activeLanguage: 'en',
@@ -15,11 +14,6 @@ export const languages = {
       langCode: 'fr',
       translations: fr,
       subTag: 'fr',
-    },
-    {
-      langCode: 'nl',
-      translations: nl,
-      subTag: 'nl',
     },
   ],
 };
