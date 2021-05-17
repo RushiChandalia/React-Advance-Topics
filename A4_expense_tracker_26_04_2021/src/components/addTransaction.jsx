@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { AppContext } from "../App";
 
-const AddTransaction = ({ setState, setTransactions }) => {
+const AddTransaction = ({inputRef, setState, setTransactions }) => {
   const value = useContext(AppContext);
   const [inputs, setInputs] = useState({
     text: "",
@@ -21,8 +21,11 @@ const AddTransaction = ({ setState, setTransactions }) => {
     });
   };
   const handleOnSubmit = (e) => {
+    e.preventDefault();
+    console.log(inputRef.current[1].value);
+
     if (inputs.text.trim() === "" || inputs.amount.trim() === "") {
-      alert("Please add a text and amount");
+      // alert("Please add a text and amount");
     } else {
       var data = {
         id: generateID(),
@@ -43,6 +46,7 @@ const AddTransaction = ({ setState, setTransactions }) => {
 
       e.preventDefault();
     }
+
   };
 
   function generateID() {

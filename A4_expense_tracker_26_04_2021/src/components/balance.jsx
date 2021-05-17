@@ -1,12 +1,23 @@
 import { useContext } from "react";
 import { AppContext } from "../App";
 
-const Balance = () => {
+const Balance = ({inputRef}) => {
   const value = useContext(AppContext);
   const balance = value.income + value.expense;
-
+  const handler = idx => e => {
+    const next = inputRef.current[idx];
+    if (next) {
+      next.focus()
+    }
+  };
   return (
     <div>
+      <div>
+       { [1,2,3].map((i,idx)=>{
+         return <input key={idx} ref={el => inputRef.current[i-1] = el}  onChange={handler(i)} type="number"></input>
+       })}
+       
+      </div>
       <h2>Expense Tracker</h2>
       <div className="container">
         <h4>Your Balance</h4>

@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useRef } from "react";
 import "./App.css";
 import Balance from "./components/balance";
 import History from "./components/history";
@@ -12,16 +12,17 @@ function App() {
     expense: 0,
   });
   const [transactions, setTransactions] = useState([]);
+  const inputRef = useRef([])
   
 
   return (
     <AppContext.Provider value={state}>
       <div className="App">
-        <Balance   />
+        <Balance inputRef ={inputRef}  />
         <transactionContext.Provider value={transactions}>
           <History setTransactions={setTransactions} />
         </transactionContext.Provider>
-        <AddTransaction  setState={setState} setTransactions={setTransactions} />
+        <AddTransaction inputRef={inputRef} setState={setState} setTransactions={setTransactions} />
       </div>
     </AppContext.Provider>
   );
