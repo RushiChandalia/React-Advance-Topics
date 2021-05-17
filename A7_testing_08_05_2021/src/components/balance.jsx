@@ -8,6 +8,7 @@ const Balance = () => {
   return (
     <div>
       <h2>Expense Tracker</h2>
+
       <div className="container">
         <h4>Your Balance</h4>
         <h1 id="balance">{`${balance}$`}</h1>

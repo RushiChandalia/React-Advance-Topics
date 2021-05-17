@@ -12,16 +12,16 @@ function App() {
     expense: 0,
   });
   const [transactions, setTransactions] = useState([]);
-  
 
   return (
     <AppContext.Provider value={state}>
       <div className="App">
-        <Balance   />
+        <h1 id="head">hello</h1>
+        <Balance />
         <transactionContext.Provider value={transactions}>
           <History setTransactions={setTransactions} />
         </transactionContext.Provider>
-        <AddTransaction  setState={setState} setTransactions={setTransactions} />
+        <AddTransaction setState={setState} setTransactions={setTransactions} />
       </div>
     </AppContext.Provider>
   );
